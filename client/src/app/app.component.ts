@@ -13,11 +13,11 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'client';
   http = inject(HttpClient);
-  user: any;
+  users : any;
 
   ngOnInit(): void {
-    this.http.get('localhost:5001/api/users').subscribe({
-      next: response => this.user = response,
+    this.http.get('https://localhost:5001/api/users').subscribe({
+      next: response => this.users = response,
       error: error => console.log(error),
       complete: ()=> console.log('Request has Completed')
     })
